@@ -1,10 +1,10 @@
-const personalDataService = require("../services/personalData.service");
+import {findAll as findAllPersonalData} from "../services/personalData.service";
 
-exports.findAll = (req, res) => {
-    // TODO add logic of course @Luca
+export function findAll(req, res) {
+    // TODO add logic of course @Filipe
     console.log("hallo")
 
-    const personalData = personalDataService.findAll();
+    const personalData = findAllPersonalData();
     console.log("personalData", personalData);
 
     res.status(200).send(personalData);

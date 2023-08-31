@@ -1,6 +1,6 @@
-const personalDataController = require("../controllers/personalData.controller");
+import {findAll} from "../controllers/personalData.controller";
 
-module.exports = function(app) {
+export default function (app) {
     app.use(function(req, res, next) {
         res.header(
             "Access-Control-Allow-Headers",
@@ -9,5 +9,5 @@ module.exports = function(app) {
         next();
     });
 
-    app.get("/", personalDataController.findAll);
+    app.get("/", findAll);
 }
