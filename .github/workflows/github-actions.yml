@@ -1,27 +1,25 @@
-name: Static Code Analysis
-
-on: [push, pull_request]
-
+name: GitHub Actions
+run-name: "${{ github.actor }} \U0001F680"
+'on':
+  - push
 jobs:
   linting:
     name: Linting
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
           node-version: '16'
-
       - name: Install dependencies
         run: |
           cd server  # navigate to the subdirectory
           npm install
-
       - name: Run Linter
-        run: |
+        run: >
           cd server  # navigate to the subdirectory
-          npm run lint  # assuming you have a script named "lint" in your package.json
+
+          npm run lint  # assuming you have a script named "lint" in your
+          package.json
