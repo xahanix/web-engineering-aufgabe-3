@@ -16,11 +16,11 @@ jobs:
         with:
           node-version: '16'
 
+      - name: Change directory to server folder
+        run: cd server  # Replace 'server' with the actual directory name
+
       - name: Install dependencies
         run: npm install
-
-      - name: Run Linter
-        run: npm run lint  # Hier den Befehl für deine statische Codeanalyse einfügen
 
       - name: Run ESLint
         run: npx eslint . --ext .js
