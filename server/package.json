@@ -7,7 +7,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node --watch index.js",
-    "lint": "eslint ."
+    "lint": "eslint --config path/to/your/.eslintrc.js ."
   },
   "author": "",
   "license": "ISC",
