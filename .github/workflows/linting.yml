@@ -16,11 +16,12 @@ jobs:
         with:
           node-version: '16'
 
-      - name: Change directory to server folder
-        run: cd server  # Replace 'server' with the actual directory name
-
       - name: Install dependencies
-        run: npm install
+        run: |
+          cd server  # navigate to the subdirectory
+          npm install
 
-      - name: Run ESLint
-        run: npx eslint . --ext .js
+      - name: Run Linter
+        run: |
+          cd server  # navigate to the subdirectory
+          npm run lint  # assuming you have a script named "lint" in your package.json
