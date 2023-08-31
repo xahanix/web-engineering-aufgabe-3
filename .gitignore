@@ -8,5 +8,6 @@ logs
 reports
 
 # Gauge - JavaScript node dependencies
-node_modules
+gauge/node_modules
+server/node_modules
 .DS_Store
